@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global styles */
+:root { --bg: #05060a; --card:#0b0d12; --muted: #9aa3b2; }
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  background: linear-gradient(180deg, #020205 0%, #071027 100%);
+  color: white;
+}
+
+/* small utilities for animation */
+@keyframes type {
+  from { width: 0 }
+  to { width: 100% }
+}
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .12em solid rgba(255,255,255,0.6);
+  animation: type 2.2s steps(26, end);
+}
+
+/* loading bar */
+@keyframes loading-bar { 0% { transform: translateX(-100%);} 100% { transform: translateX(250%);} }
+.loading-bar { animation: loading-bar 1.6s linear infinite; }
+
+/* subtle card */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+}
